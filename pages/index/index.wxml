@@ -1,0 +1,9 @@
+<!--index.wxml-->
+<view class="container">
+   <swiper indicator-dots autoplay>
+      <swiper-item wx:for="{{recommend}}" wx:key="song_id" class="slide-item" data-id="{{item.song_id}}" bindtap="gotoPlayer">
+        <image src="{{item.pic_s500}}" />
+        <text>{{item.title}}</text>
+      </swiper-item>
+  </swiper>
+</view>
