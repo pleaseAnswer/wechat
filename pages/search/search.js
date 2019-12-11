@@ -1,5 +1,7 @@
 // pages/search/search.js
 const app = getApp();
+import regeneratorRuntime from 'regenerator-runtime'
+
 Page({
 
   /**

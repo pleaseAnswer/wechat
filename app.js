@@ -1,5 +1,4 @@
 //app.js
-import regeneratorRuntime from 'regenerator-runtime'
 App({
   onLaunch: function () {
     // 展示本地存储能力
