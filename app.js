@@ -1,4 +1,5 @@
 //app.js
+import regeneratorRuntime from 'regenerator-runtime'
 App({
   onLaunch: function () {
     // 展示本地存储能力
@@ -35,5 +36,24 @@ App({
   },
   globalData: {
     userInfo: null
+  },
+  getData(options={}){
+    let { method = 'baidu.ting.billboard.billList', type,data={size:5,offset:0}} = options;
+    return new Promise((resolve,reject)=>{
+      wx.request({
+        url: 'http://tingapi.ting.baidu.com/v1/restserver/ting',
+        data: {
+          ...data,
+          method,
+          type
+        },
+        success: ({ data }) => {
+          resolve(data)
+        },
+        fail(){
+          reject()
+        }
+      })
+    })
   }
 })

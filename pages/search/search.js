@@ -1,4 +1,5 @@
 // pages/search/search.js
+const app = getApp();
 Page({
 
   /**
@@ -11,8 +12,12 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
-
+  onLoad: async function (options) {
+    let {keyword} = options;
+    keyword = "演员";
+    // app.getData({ method: 'baidu.ting.search.catalogSug', data: { query: keyword } }).then(res => console.log(res))
+    let res = await app.getData({ method:'baidu.ting.search.catalogSug',data:{query:keyword}})
+    console.log(res)
   },
 
   /**

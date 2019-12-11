@@ -12,7 +12,6 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function ({id}) {
-    console.log('id:',id);
     id = "672299768",
     wx.request({
       url: 'http://tingapi.ting.baidu.com/v1/restserver/ting',
